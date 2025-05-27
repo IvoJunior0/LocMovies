@@ -5,9 +5,14 @@ const loginContainer = document.getElementById('loginContainer');
 
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
-        console.log(user)
+        loginContainer.innerHTML = `
+            <span>${user.email.split('@')[0]}</span>
+            <button class="btn-login" id="loginBtn" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></button>
+        `;
     } else {
-        console.log("b")
+        loginContainer.innerHTML = `
+            <button class="btn-login" id="loginBtn" onclick="openLoginWindow()">Login</button>
+        `;
     }
 })
 
@@ -17,6 +22,12 @@ function openLoginWindow() {
 
 function logout() {
     console.log("teste")
+    firebase.auth().signOut().then(() => {
+        console.log("Logout feito com sucesso");
+        window.location.href = "./pages/login.html";
+    }).catch((error) => {
+        console.log(error)
+    });
 }
 
 menuToggle.addEventListener('click', () => {
