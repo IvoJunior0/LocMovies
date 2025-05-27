@@ -4,6 +4,7 @@ const searchContainer = document.getElementById('searchContainer');
 const loginContainer = document.getElementById('loginContainer');
 
 firebase.auth().onAuthStateChanged(user => {
+    console.log(user)
     if (user) {
         loginContainer.innerHTML = `
             <span>${user.email.split('@')[0]}</span>
@@ -15,6 +16,7 @@ firebase.auth().onAuthStateChanged(user => {
         `;
     }
 })
+
 
 function openLoginWindow() {
     window.location.href = "./pages/login.html";
