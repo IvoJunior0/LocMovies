@@ -1,7 +1,17 @@
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
+const navContainer = document.getElementById('navbar');
 const searchContainer = document.getElementById('searchContainer');
 const loginContainer = document.getElementById('loginContainer');
+const ladingContainer = document.getElementById('lading');
+
+const novaAltura = window.innerHeight - navContainer.offsetHeight;
+ladingContainer.style.height = `${novaAltura}px`;
+
+window.addEventListener('resize', () => {
+    const novaAltura = window.innerHeight - navContainer.offsetHeight;
+    ladingContainer.style.height = `${novaAltura}px`;
+});
 
 firebase.auth().onAuthStateChanged(user => {
     console.log(user)
@@ -16,7 +26,6 @@ firebase.auth().onAuthStateChanged(user => {
         `;
     }
 })
-
 
 function openLoginWindow() {
     window.location.href = "./pages/login.html";

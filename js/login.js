@@ -10,7 +10,7 @@ async function login() {
         const btn = document.querySelector('.login-btn');
         btn.disabled = true;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-        
+
         await firebase.auth().signInWithEmailAndPassword(email, password);
 
         console.log("Usuário logado com sucesso");
@@ -18,16 +18,18 @@ async function login() {
         console.error("Erro no login:", error);
 
         const btn = document.querySelector('.login-btn');
+        const code = error.code;
+        
         btn.disabled = false;
         btn.textContent = 'Login';
         // Mensagens de erro
-        let errorMessage = "Erro ao fazer login";
-        if (error.code === "auth/wrong-password") {
-            errorMessage = "Senha incorreta";
-        } else if (error.code === "auth/user-not-found") {
-            errorMessage = "Usuário não encontrado";
-        }
-        alert(errorMessage);
+        const errorMessages = {
+            'auth/wrong-password': 'Senha incorreta',
+            'auth/user-not-found': 'Usuário não encontrado',
+            'auth/invalid-email': 'Email inválido'
+        };
+
+        alert(errorMessages[code] || 'Erro ao fazer login');
     }
 }
 

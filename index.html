@@ -11,7 +11,7 @@
 
 <body>
     <!-- Navbar -->
-     <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <button class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
         </button>
@@ -19,9 +19,19 @@
             <span>LocMovies</span>
         </a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Contato</a></li>
+            <li><a href="#"><button class="dropbtn">Home</button></a></li>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn">Formatos</button>
+                    <div class="dropdown-content">
+                        <a href="#">DVD</a>
+                        <a href="#">VHS</a>
+                        <a href="#">Blu-ray</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#catalogo"><button class="dropbtn">Catagolo</button></a></li>
+            <li><a href="#contato"><button class="dropbtn">Contato</button></a></li>
         </ul>
         <div class="search-container" id="searchContainer">
             <input type="text" class="search-input" placeholder="Pesquisar...">
@@ -35,6 +45,10 @@
             <!-- <button class="btn-login" id="loginBtn" onclick="openLoginWindow()">Login</button> -->
         </div>
     </nav>
+    <main>
+        <section class="landing" id="lading">
+        </section>
+    </main>
     <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore-compat.js"></script>
@@ -42,4 +56,5 @@
     <script src="index.js"></script>
     </script>
 </body>
+
 </html>
