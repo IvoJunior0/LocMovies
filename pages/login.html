@@ -1,34 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>LocMovies - Login</title>
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-    <form action="">
-        <div class="">
-            <label for="">Email: </label>
-            <br>
-            <input type="email" name="email" id="email" placeholder="Digite seu email...">
+    <div class="login-container">
+        <div class="login-header">
+            <h1>
+                <i class="fa-regular fa-circle-user"></i>
+                <h1 class="login-title">Login</h1>
+            </h1>
         </div>
-        <div class="">
-            <label for="">Senha: </label>
-            <br>
-            <input type="password" name="password" id="password" placeholder="Digite sua senha...">
-        </div>
-        <div class="">
-            <a href="">Recuperar senha</a>
-        </div>
-        <div class="">
-            <button type="button">Entrar</button>
-        </div>
-        <div class="">
-            <a href="">Criar nova conta</a>
-        </div>
-    </form>
-</body>
 
+        <form class="login-form">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="E-mail" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Senha" required>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+            <hr class="line">
+            <div class="login-links">
+                <a href="#">Esqueceu a senha?</a>
+                <a href="#">Cadastrar-se</a>
+            </div>
+        </form>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore-compat.js"></script>
+    <script src="../config/firebase.js"></script>
+    <script src="../js/login.js"></script>
+</body>
 </html>

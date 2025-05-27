@@ -1,77 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Loja Home</title>
 </head>
+
 <body>
-    <header class="navbar">
-        <a href="" class="logo">Logo</a>
-        <div class="feats">
-            <ul class="links">
-                <li><a href="">Home</a></li>
-                <li><a href="">Sobre</a></li>
-                <li><a href="">Produtos</a></li>
-                <li><a href="">Contato</a></li>
-                <li></li>
-            </ul>
-            <button class="btn-login" onclick="openLoginWindow()">Login</button>
+    <!-- Navbar -->
+     <nav class="navbar">
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a href="#" class="logo">
+            <span>LocMovies</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+        <div class="search-container" id="searchContainer">
+            <input type="text" class="search-input" placeholder="Pesquisar...">
+            <button class="search-button">
+                <i class="fas fa-search"></i>
+            </button>
         </div>
-    </header>
-    <div class="login" id="login">
-        <div class="login-form">
-            <div class="">
-                <h1>Login</h1>
-            </div>
-            <form action="">
-                <div class="">
-                    <label for="">Email: </label>
-                    <br>
-                    <input type="email" name="email" id="email" placeholder="Digite seu email...">
-                </div>
-                <div class="">
-                    <label for="">Senha: </label>
-                    <br>
-                    <input type="password" name="password" id="password" placeholder="Digite sua senha...">
-                </div>
-                <div class="">
-                    <a href="">Recuperar senha</a>
-                </div>
-                <button type="button" class="btn-form-login">Entrar</button>
-                <div class="">
-                    <a href="">Criar nova conta</a>
-                </div>
-            </form>
+        <div class="login-container" id="loginContainer">
+            <button onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i></button>
+            <!-- <button class="btn-login" id="loginBtn" onclick="openLoginWindow()">Login</button> -->
         </div>
-    </div>
-    <script src="index.js"></script>
+    </nav>
     <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-auth-compat.js"></script>
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyBidZ3bW_aUV6--4-IzaA5ffwRoyggCXoA",
-            authDomain: "e-commerce-1bace.firebaseapp.com",
-            projectId: "e-commerce-1bace",
-            storageBucket: "e-commerce-1bace.firebasestorage.app",
-            messagingSenderId: "1025673573006",
-            appId: "1:1025673573006:web:97ef141bd05d84db30cfdf",
-            measurementId: "G-WZWQ5LCL6V"
-        };
-
-        firebase.initializeApp(firebaseConfig);
-
-        firebase.auth()
-        .signInWithEmailAndPassword("shymanjr2019@gmail.com", "123456")
-        .then(response => {
-            console.log('success', response)
-        }).catch(error => {
-            console.log('error', error)
-        });
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore-compat.js"></script>
+    <script src="./config/firebase.js"></script>
+    <script src="index.js"></script>
     </script>
 </body>
+
 </html>
