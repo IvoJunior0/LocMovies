@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+    --primary-color: #352F44;
+    --secondary-color: #5C5470;
+    --light-color: #FAF0E6;
+    --accent-color: #B9B4C7;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Reddit Sans', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4.5rem 0 4.5rem 0;
+    gap: 2rem;
+    background-color: #352F44;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 45%;
+    /* margin: auto; */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #5C5470;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+input[type="submit"]:hover {
+    background-color: #8C4A6F;
+}
+
+.student-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.student-item:last-child {
+    border-bottom: none;
+}
+
+#studentList{
+    width: 40%;
+}
+#studentTable{
+    width: 100%;
+}

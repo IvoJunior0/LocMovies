@@ -1,3 +1,4 @@
+// TODO: documentar isso depois.
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 const navContainer = document.getElementById('navbar');
@@ -14,7 +15,7 @@ window.addEventListener('resize', () => {
 });
 
 firebase.auth().onAuthStateChanged(user => {
-    console.log(user)
+    // DEBUG: console.log(user)
     if (user) {
         loginContainer.innerHTML = `
             <span>${user.email.split('@')[0]}</span>
